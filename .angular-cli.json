@@ -8,9 +8,6 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "dashboard.html",
-        "cards.html",
-        "flot.html",
         "assets",
         "favicon.ico"
       ],
