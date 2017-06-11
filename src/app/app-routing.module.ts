@@ -9,9 +9,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cards', component: CardsComponent },
-  { path: 'charts', children: [
-    { path: 'flot', component: FlotComponent }
-  ] },
+  {
+    path: 'charts', children: [
+      { path: '', redirectTo: 'flot', pathMatch: 'full' },
+      { path: 'flot', component: FlotComponent }
+    ]
+  },
   fullbackRoute
 ];
 
