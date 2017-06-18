@@ -35,7 +35,7 @@
             </div>
           </fieldset>
           <fieldset formGroupName="metadata">
-            <div class="form-group">
+            <div class="form-group" [class.has-error]="checkValid(f, 'metadata.subtitle')">
               <label class="col-sm-2 control-label">
                 副標題
               </label>
@@ -43,6 +43,19 @@
                 <input type="text" class="form-control"
                   formControlName="subtitle">
                 <span class="help-block">
+                  <span *ngIf="form.get('metadata.subtitle')['errors']?.required">請輸入標題</span>
+                  <pre>
+                    form.get('metadata.subtitle').value = {{ form.get('metadata.subtitle')['value'] }}
+                    form.get('metadata.subtitle').vaild = {{ form.get('metadata.subtitle')['valid'] }}
+                    form.get('metadata.subtitle').invalid = {{ form.get('metadata.subtitle')['invalid'] }}
+                    form.get('metadata.subtitle').dirty = {{ form.get('metadata.subtitle')['dirty'] }}
+                    form.get('metadata.subtitle').pristine = {{ form.get('metadata.subtitle')['pristine'] }}
+                    form.get('metadata.subtitle').touched = {{ form.get('metadata.subtitle')['touched'] }}
+                    form.get('metadata.subtitle').untouched = {{ form.get('metadata.subtitle')['untouched'] }}
+                    form.get('metadata.subtitle').enabled = {{ form.get('metadata.subtitle')['enabled'] }}
+                    form.get('metadata.subtitle').disabled = {{ form.get('metadata.subtitle')['disabled'] }}
+                    form.get('metadata.subtitle').errors = {{ form.get('metadata.subtitle')['errors'] | json }}
+                  </pre>
                 </span>
               </div>
             </div>
