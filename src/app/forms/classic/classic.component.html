@@ -12,15 +12,17 @@
           <div ngModelGroup="group1" #group1="ngModelGroup">
             <fieldset>
               <div class="form-group"
-                [class.has-error]="this.checkValid(mTitle)">
+                [class.has-error]="checkValid(mTitle)">
                 <label class="col-sm-2 control-label">Title</label>
                 <div class="col-sm-10">
                   <input type="text"
                     name="title"
-                    [(ngModel)]="data.title" required
+                    [(ngModel)]="data.title"
+                    required minlength="3" maxlength="20"
                     #mTitle='ngModel'
                     class="form-control rounded">
-                  <span class="help-block">
+                  <span class="help-block" *ngIf="mTitle['errors']?.required">
+                    <span>請輸入標題</span>
                     <pre>
                       mTitle.value = {{ mTitle['value'] }}
                       mTitle.vaild = {{ mTitle['valid'] }}
@@ -41,15 +43,17 @@
           <div ngModelGroup="group2" #group2="ngModelGroup">
             <fieldset>
               <div class="form-group"
-                [class.has-error]="this.checkValid(mSubtitle)">
+                [class.has-error]="checkValid(mSubtitle)">
                 <label class="col-sm-2 control-label">Subtitle</label>
                 <div class="col-sm-10">
                   <input type="text"
                     name="Subtitle"
-                    [(ngModel)]="data.subtitle" required
+                    [(ngModel)]="data.subtitle"
+                    required minlength="3" maxlength="20"
                     #mSubtitle='ngModel'
                     class="form-control">
-                  <span class="help-block">
+                  <span class="help-block" *ngIf="mSubtitle['errors']?.required">
+                    <span>請輸入標題</span>
                     <pre>
                       mSubtitle.value = {{ mSubtitle['value'] }}
                       mSubtitle.vaild = {{ mSubtitle['valid'] }}
