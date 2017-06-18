@@ -21,8 +21,8 @@
                     required minlength="3" maxlength="20"
                     #mTitle='ngModel'
                     class="form-control rounded">
-                  <span class="help-block" *ngIf="mTitle['errors']?.required">
-                    <span>請輸入標題</span>
+                  <span class="help-block">
+                    <span *ngIf="mTitle['errors']?.required">請輸入標題</span>
                     <pre>
                       mTitle.value = {{ mTitle['value'] }}
                       mTitle.vaild = {{ mTitle['valid'] }}
