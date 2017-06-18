@@ -9,61 +9,64 @@
       <div class="card-body">
         <form class="form-horizontal"
           #form="ngForm" (ngSubmit)="doSubmit(form, $event)">
-          <fieldset>
-            <div class="form-group"
-              [class.has-error]="this.checkValid(mTitle)">
-              <label class="col-sm-2 control-label">Title</label>
-              <div class="col-sm-10">
-                <input type="text"
-                  name="title"
-                  [(ngModel)]="data.title" required
-                  #mTitle='ngModel'
-                  class="form-control rounded">
-                <span class="help-block">
-                  <pre>
-                    mTitle.value = {{ mTitle['value'] }}
-                    mTitle.vaild = {{ mTitle['valid'] }}
-                    mTitle.invalid = {{ mTitle['invalid'] }}
-                    mTitle.dirty = {{ mTitle['dirty'] }}
-                    mTitle.pristine = {{ mTitle['pristine'] }}
-                    mTitle.touched = {{ mTitle['touched'] }}
-                    mTitle.untouched = {{ mTitle['untouched'] }}
-                    mTitle.enabled = {{ mTitle['enabled'] }}
-                    mTitle.disabled = {{ mTitle['disabled'] }}
-                    mTitle.errors = {{ mTitle['errors'] | json }}
-                  </pre>
-                </span>
+          <div ngModelGroup="group1" #group1="ngModelGroup">
+            <fieldset>
+              <div class="form-group"
+                [class.has-error]="this.checkValid(mTitle)">
+                <label class="col-sm-2 control-label">Title</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                    name="title"
+                    [(ngModel)]="data.title" required
+                    #mTitle='ngModel'
+                    class="form-control rounded">
+                  <span class="help-block">
+                    <pre>
+                      mTitle.value = {{ mTitle['value'] }}
+                      mTitle.vaild = {{ mTitle['valid'] }}
+                      mTitle.invalid = {{ mTitle['invalid'] }}
+                      mTitle.dirty = {{ mTitle['dirty'] }}
+                      mTitle.pristine = {{ mTitle['pristine'] }}
+                      mTitle.touched = {{ mTitle['touched'] }}
+                      mTitle.untouched = {{ mTitle['untouched'] }}
+                      mTitle.enabled = {{ mTitle['enabled'] }}
+                      mTitle.disabled = {{ mTitle['disabled'] }}
+                      mTitle.errors = {{ mTitle['errors'] | json }}
+                    </pre>
+                  </span>
+                </div>
               </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div class="form-group"
-              [class.has-error]="this.checkValid(mSubtitle)">
-              <label class="col-sm-2 control-label">Subtitle</label>
-              <div class="col-sm-10">
-                <input type="text"
-                  name="Subtitle"
-                  [(ngModel)]="data.subtitle" required
-                  #mSubtitle='ngModel'
-                  class="form-control">
-                <span class="help-block">
-                  <pre>
-                    mSubtitle.value = {{ mSubtitle['value'] }}
-                    mSubtitle.vaild = {{ mSubtitle['valid'] }}
-                    mSubtitle.invalid = {{ mSubtitle['invalid'] }}
-                    mSubtitle.dirty = {{ mSubtitle['dirty'] }}
-                    mSubtitle.pristine = {{ mSubtitle['pristine'] }}
-                    mSubtitle.touched = {{ mSubtitle['touched'] }}
-                    mSubtitle.untouched = {{ mSubtitle['untouched'] }}
-                    mSubtitle.enabled = {{ mSubtitle['enabled'] }}
-                    mSubtitle.disabled = {{ mSubtitle['disabled'] }}
-                    mSubtitle.errors = {{ mSubtitle['errors'] | json }}
-                  </pre>
-                </span>
+            </fieldset>
+          </div>
+          <div ngModelGroup="group2" #group2="ngModelGroup">
+            <fieldset>
+              <div class="form-group"
+                [class.has-error]="this.checkValid(mSubtitle)">
+                <label class="col-sm-2 control-label">Subtitle</label>
+                <div class="col-sm-10">
+                  <input type="text"
+                    name="Subtitle"
+                    [(ngModel)]="data.subtitle" required
+                    #mSubtitle='ngModel'
+                    class="form-control">
+                  <span class="help-block">
+                    <pre>
+                      mSubtitle.value = {{ mSubtitle['value'] }}
+                      mSubtitle.vaild = {{ mSubtitle['valid'] }}
+                      mSubtitle.invalid = {{ mSubtitle['invalid'] }}
+                      mSubtitle.dirty = {{ mSubtitle['dirty'] }}
+                      mSubtitle.pristine = {{ mSubtitle['pristine'] }}
+                      mSubtitle.touched = {{ mSubtitle['touched'] }}
+                      mSubtitle.untouched = {{ mSubtitle['untouched'] }}
+                      mSubtitle.enabled = {{ mSubtitle['enabled'] }}
+                      mSubtitle.disabled = {{ mSubtitle['disabled'] }}
+                      mSubtitle.errors = {{ mSubtitle['errors'] | json }}
+                    </pre>
+                  </span>
+                </div>
               </div>
-            </div>
-          </fieldset>
-
+            </fieldset>
+          </div>
           <button type="submit">送出表單</button>
 
           <fieldset>

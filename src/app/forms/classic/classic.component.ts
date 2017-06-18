@@ -15,8 +15,8 @@ export class ClassicComponent implements OnInit {
 
   ngOnInit() {
     this.data = {
-      'title': 'This is title',
-      'subtitle': 'This is subtitle'
+      'title': 'This is title.',
+      'subtitle': 'This is subtitle.'
     };
   }
 
