@@ -7,6 +7,8 @@ import { Component, OnInit, ElementRef, ContentChild } from '@angular/core';
 })
 export class BlockComponent implements OnInit {
 
+  title: string = 'Sky red';
+
   @ContentChild('btn') btn: ElementRef;
 
   constructor() { }

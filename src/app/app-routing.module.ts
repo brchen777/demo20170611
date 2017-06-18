@@ -12,7 +12,8 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
 const routes: Routes = [
   { path: '', component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'forms/reactive', pathMatch: 'full' },
+      // { path: '', redirectTo: 'forms/reactive', pathMatch: 'full' },
+      { path: '', redirectTo: 'cards/200', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       // { path: 'cards/:type', component: CardsComponent, canActivate: [LoginGuard] },
       { path: 'cards/:type', component: CardsComponent },
