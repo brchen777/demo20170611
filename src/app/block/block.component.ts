@@ -9,7 +9,8 @@ export class BlockComponent implements OnInit {
 
   title: string = 'Sky red';
 
-  @ContentChild('btn') btn: ElementRef;
+  @ContentChild('btn1') btn1: ElementRef;
+  @ContentChild('btn2') btn2: ElementRef;
 
   constructor() { }
 
@@ -17,8 +18,12 @@ export class BlockComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    if (this.btn) {
-      this.btn.nativeElement.innerHTML = '30';
+    if (this.btn1) {
+      this.btn1.nativeElement.innerHTML = '30';
+    }
+
+    if (this.btn2) {
+      this.btn2.nativeElement.innerHTML = '60';
     }
   }
 }

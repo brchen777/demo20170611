@@ -1,10 +1,16 @@
-import { Directive } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appBtnNumberPlus1]'
+  selector: '[btn-plus1]'
 })
 export class BtnNumberPlus1Directive {
 
   constructor() { }
 
+  @HostListener('click', ['$event.target'])
+  plus1(btn: HTMLButtonElement) {
+    let num = +btn.innerText;
+    num++;
+    btn.innerText = num.toString();
+  }
 }
