@@ -8,15 +8,23 @@ import { NgForm } from "@angular/forms";
 })
 export class ClassicComponent implements OnInit {
 
-  data: any = {};
   form: any = {};
+  data: any = {};
+  addresses: any[] = [
+    '',
+    ''
+  ];
 
   constructor() { }
 
   ngOnInit() {
     this.data = {
       'title': 'This is title.',
-      'subtitle': 'This is subtitle.'
+      'subtitle': 'This is subtitle.',
+      'addresses': [
+        'Address 1',
+        'Address 2'
+      ]
     };
   }
 
