@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
@@ -36,5 +36,9 @@ export class ReactiveComponent implements OnInit {
     addresses.push(
       this.fb.control('New Address')
     );
+  }
+
+  checkValid(form: NgForm, fieldName: string) {
+    return ((form['submitted'] || this.form.get(fieldName)['touched']) && this.form.get(fieldName)['invalid']);
   }
 }

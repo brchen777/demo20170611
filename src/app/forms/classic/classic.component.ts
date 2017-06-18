@@ -38,6 +38,6 @@ export class ClassicComponent implements OnInit {
   }
 
   checkValid(field) {
-      return (this.form['submitted'] && field['touched'] && field['invalid']);
-    }
+    return ((this.form['submitted'] || field['touched']) && field['invalid']);
+  }
 }
