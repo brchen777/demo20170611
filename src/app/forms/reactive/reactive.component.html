@@ -19,7 +19,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset formGroupName="metadata">
             <div class="form-group">
               <label class="col-sm-2 control-label">
                 副標題
@@ -32,14 +32,19 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
-            <div class="form-group">
-              <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
-              <div class="col-sm-10">
-                <input id="input-id-1" type="text" class="form-control">
+          <div formArrayName="addresses">
+            <fieldset *ngFor="let item of form.get('addresses').controls; let i=index">
+              <div class="form-group">
+                <label for="input-id-1" class="col-sm-2 control-label">
+                  Address {{ i+1 }}
+                </label>
+                <div class="col-sm-10">
+                  <input id="input-id-1" type="text" class="form-control"
+                    [formControlName]="i">
+                </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
           <fieldset>
             <div class="form-group">
               <label class="col-sm-2 control-label">Password</label>
