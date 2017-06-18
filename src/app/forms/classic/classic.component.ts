@@ -9,6 +9,7 @@ import { NgForm } from "@angular/forms";
 export class ClassicComponent implements OnInit {
 
   data: any = {};
+  form: any = {};
 
   constructor() { }
 
@@ -22,9 +23,13 @@ export class ClassicComponent implements OnInit {
   doSubmit(form: NgForm, $event) {
     console.log(form);
     console.log($event);
+    this.form = form;
     if (form.invalid) {
       alert('表單無效，請檢查欄位!');
     }
   }
 
+  checkValid(field) {
+      return ((this.form['submitted'] || field['touched']) && field['invalid']);
+    }
 }
