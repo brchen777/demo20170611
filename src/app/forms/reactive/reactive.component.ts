@@ -34,6 +34,14 @@ export class ReactiveComponent implements OnInit {
     });
   }
 
+  doSubmit(form: NgForm, $event) {
+    console.log(form);
+    console.log($event);
+    if (form.invalid) {
+      alert('表單無效，請檢查欄位!');
+    }
+  }
+
   addNewAddress() {
     let addresses = this.form.get('addresses') as FormArray;
 
@@ -43,6 +51,6 @@ export class ReactiveComponent implements OnInit {
   }
 
   checkValid(form: NgForm, fieldName: string) {
-    return ((form['submitted'] || this.form.get(fieldName)['touched']) && this.form.get(fieldName)['invalid']);
+    return (form['submitted'] && this.form.get(fieldName)['touched'] && this.form.get(fieldName)['invalid']);
   }
 }
