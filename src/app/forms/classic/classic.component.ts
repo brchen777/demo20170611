@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -8,12 +8,13 @@ import { NgForm } from "@angular/forms";
 })
 export class ClassicComponent implements OnInit {
 
-  form: any = {};
   data: any = {};
   addresses: any[] = [
     '',
     ''
   ];
+
+  @ViewChild(NgForm) form: NgForm;
 
   constructor() { }
 
@@ -31,7 +32,6 @@ export class ClassicComponent implements OnInit {
   doSubmit(form: NgForm, $event) {
     console.log(form);
     console.log($event);
-    this.form = form;
     if (form.invalid) {
       alert('表單無效，請檢查欄位!');
     }
